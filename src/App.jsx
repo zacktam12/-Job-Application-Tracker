@@ -1,11 +1,18 @@
 import React from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
 
-function App() {
+const App = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-red-100 text-2xl font-semibold text-gray-800">
-      Hello!
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
