@@ -19,7 +19,7 @@ const JobDetails = () => {
       {job.interviewDate && (
         <p>
           Interview Date: {new Date(job.interviewDate).toLocaleDateString()}
-        </p>
+        <b/p>
       )}
     </div>
   );
