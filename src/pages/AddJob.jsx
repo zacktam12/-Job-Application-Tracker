@@ -1,11 +1,13 @@
 import JobForm from "../components/JobForm";
-
+import React from "react";
 const AddJob = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Add New Job</h2>
-      <JobForm />
-    </div>
+    <>
+      <main className="p-6 max-w-lg mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-center">Add New Job</h2>
+        <JobForm />
+      </main>
+    </>
   );
 };
 
