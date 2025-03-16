@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Button.css"; // Ensure this file exists in the same directory
 
 const Button = ({ onClick, children, type = "button", className = "" }) => {
   return (
-    <button type={type} className={`btn ${className}`} onClick={onClick}>
+    <button
+      type={type}
+      className={`px-4 py-2 bg-blue-500 text-white rounded ${className}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
