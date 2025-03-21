@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import JobCard from "../components/JobCard";
 import JobForm from "../components/JobForm";
