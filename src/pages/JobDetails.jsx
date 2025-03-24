@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import React from "react";
 
-const JobDetails = () => {
+function JobDetails() {
   const { id } = useParams();
   const { jobs } = useSelector((state) => state.jobs);
   const job = jobs.find((job) => job.id === parseInt(id));
@@ -19,10 +20,10 @@ const JobDetails = () => {
       {job.interviewDate && (
         <p>
           Interview Date: {new Date(job.interviewDate).toLocaleDateString()}
-        <b/p>
+        </p>
       )}
     </div>
   );
-};
+}
 
 export default JobDetails;
