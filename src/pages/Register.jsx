@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css"; // Import the CSS file for styling
+import React from "react";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // This effect runs once when the component mounts
+    console.log("Register component mounted");
+
+    return () => {
+      // This cleanup function runs when the component unmounts
+      console.log("Register component unmounted");
+    };
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
