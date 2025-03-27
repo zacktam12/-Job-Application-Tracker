@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addJob } from "../redux/jobs/jobSlice";
 
@@ -9,6 +9,10 @@ const JobForm = () => {
     status: "Applied",
   });
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("Form state updated:", form);
+  }, [form]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
