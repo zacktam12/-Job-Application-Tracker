@@ -27,6 +27,15 @@ const jobSlice = createSlice({
     deleteJob: (state, action) => {
       state.jobs = state.jobs.filter((job) => job.id !== action.payload);
     },
+    updateJob: (state, action) => {
+      const index = state.jobs.findIndex((job) => job.id === action.payload.id);
+      if (index !== -1) {
+        state.jobs[index] = { ...state.jobs[index], ...action.payload.data };
+      }
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
   },
 });
 
@@ -36,5 +45,7 @@ export const {
   fetchJobsFailure,
   addJob,
   deleteJob,
+  updateJob,
+  clearError,
 } = jobSlice.actions;
 export default jobSlice.reducer;
